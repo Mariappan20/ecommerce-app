@@ -1,15 +1,16 @@
-.product {
-	
-}
-
-.product__card{
-	border: 1px solid black;
+.productCard{
+	border: 1px solid #ddd;
+	border-radius: 5px;
 	text-align: center;
 	padding: 10px;
 	margin: 4px;
 }
 
-.pad__zero{
-	padding: 0;
+.productCard:hover {
+	-webkit-box-shadow: -1px 2px 40px -7px rgba(201,201,201,1);
+    -moz-box-shadow: -1px 2px 40px -7px rgba(201,201,201,1);
+    box-shadow: -1px 2px 40px -7px rgba(201,201,201,1);
 }
+
+
 	
