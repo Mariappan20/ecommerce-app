@@ -1,0 +1,15 @@
+.product {
+	
+}
+
+.product__card{
+	border: 1px solid black;
+	text-align: center;
+	padding: 10px;
+	margin: 4px;
+}
+
+.pad__zero{
+	padding: 0;
+}
+	
