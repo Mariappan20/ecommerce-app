@@ -1,0 +1,32 @@
+.checkoutItem {
+	margin-top: 10px;
+	border: 1px solid #ddd;
+	padding: 10px;
+	display: flex;
+	border-radius: 2px;
+}
+
+
+.checkoutItem__image {
+	object-fit: contain;
+	height: 150px;
+	width: 150px;
+}
+
+.checkoutItem__price {
+	font-weight: bold;
+}
+
+.checkoutItem__cart {
+	
+}
+
+.checkoutItem__remove {
+	background: #d7d7d7;
+	color: black;
+	padding: 10px;
+	border: none;
+	border-radius: 2px;
+	font-size: 14px;
+	
+}

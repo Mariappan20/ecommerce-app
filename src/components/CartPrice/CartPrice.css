@@ -1,0 +1,33 @@
+.cartPrice {
+	border: 1px solid #ddd;
+	padding: 10px;
+	margin-top: 10px;
+	border-radius: 2px;
+}
+
+.cartPrice__title {
+	color: #968787;
+	font-weight: 600;
+}
+
+.cartPrice__placeOrder {
+	background: #fb641b;
+	color: #FFFFFF;
+	padding: 10px;
+	border: none;
+	border-radius: 2px;
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 4px;
+	
+}
+
+.cartPrice__modalTitle {
+	text-align: center;
+	color: #2874f0;
+}
+
+.cartPrice__modalContent {
+	color: #008000;
+	text-align: center;
+}

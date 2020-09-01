@@ -14,6 +14,12 @@
     font-size: 20px;
 }
 
+.navBar__siteName:hover {
+    color: #FFFFFC;
+    text-decoration: none;
+    cursor: pointer
+}
+
 .navBar__search {
     display: flex;
 }
@@ -41,6 +47,13 @@
     color: #FFFFFC;
     font-size: 15px;
     font-weight: bold;
+}
+
+.navBar__link:hover {
+    text-decoration: none;
+    color: #FFFFFC;
+	cursor: pointer;
+   
 }
 
 .navBar__cartIcon {

@@ -1,29 +1,50 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { auth } from './firebase';
 
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
+
+import Checkout from './containers/Checkout/Checkout';
+import Login from './containers/Login/Login';
+import SignUp from './containers/SignUp/SignUp';
 import Home from './containers/Home/Home';
+import { useStateValue} from './context/StateProvider';
 
 const App = () => {
-    return (
+	
+	const [ { authUser }, dispatch] = useStateValue();
+	useEffect(() => {
+		const removeListen = auth.onAuthStateChanged( ( authUser ) => {
+			if( authUser ){
+				dispatch({
+					type: 'AUTH_USER',
+					user: authUser
+				});
+			}
+			else {
+				dispatch({
+					type: 'AUTH_USER',
+					user: null
+				});
+			}
+		} );
+		
+		return(() => {
+			removeListen();
+		})
+	}, [])
+	
+	
+	console.log('User is Authenticated', authUser);
+
+	return (
         <Router>
             <div>
-               <Switch>
-
-                   <Route path="/login">
-                       <h5>Login Page</h5>
-                   </Route>
-
-                   <Route path="/checkout">
-                       <h5>Checkout Page</h5>
-                   </Route>
-
-                   <Route path="/" exact>
-                       <Navbar />
-					   <Home />
-					   
-				  </Route>
+				<Switch>
+					<Route path="/login" component={Login} />
+					<Route path="/signup" component={SignUp} />
+					<Route path="/checkout" component={ Checkout } />
+					<Route path="/" exact component={ Home } />
 				</Switch>
             </div>
         </Router>
