@@ -8,8 +8,7 @@ import './Navbar.css';
 
 const Navbar = (props) => {
 	
-	console.log('ddddd',props.cart);
-	console.log('aaa',props.auth);
+	
 	return (
         <nav className="navBar">
             <Container>

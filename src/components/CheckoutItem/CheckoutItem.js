@@ -6,7 +6,7 @@ const CheckoutItem = props => {
 	return (
 		<div className="checkoutItem">
 			<div>
-				<img  className="checkoutItem__image" src="../../assets/images/samsung.jpg" alt="product"   />
+				<img  className="checkoutItem__image" src={`../assets/images/${props.src}.jpg`} alt="product"   />
 			</div>
 			<div>
 				<p>{props.name}</p>

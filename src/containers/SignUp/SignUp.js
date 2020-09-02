@@ -47,13 +47,13 @@ const SignUp = ( props ) => {
 		auth.createUserWithEmailAndPassword(email, password)
 		 .then( response => {
 			 setLoader(false);
-				console.log('response',response);
+				
 				history.push('/login'); 
 		 }
 		 )
 		 .catch( err => { 
 			setLoader(false);
-			console.log(err);
+			
 			setErrorMessage(err.message);
 			} )
 	}

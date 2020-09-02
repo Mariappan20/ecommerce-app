@@ -19,7 +19,7 @@ const Checkout = () => {
 
 
 	const removeFromCartHandler = ( id ) => {
-		console.log('removed', id);
+		
 		
 		dispatch({
 			type: "REMOVE_FROM_CART",
@@ -30,7 +30,7 @@ const Checkout = () => {
 	
 	const placeOrderHandler = () => {
 		setShowModal(true);
-		console.log('place order', showModal);
+		
 		
 		
 	}
@@ -79,6 +79,7 @@ const Checkout = () => {
 										<CheckoutItem 
 											key={items._id}
 											name={items.name} 
+											src={items.src}
 											price={items.price}
 											clicked={( id ) => removeFromCartHandler( items._id )}	/>
 									))

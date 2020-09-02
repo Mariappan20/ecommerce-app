@@ -41,7 +41,7 @@ const Auth = ( props ) => {
 	}
 	
 	const loginHandler = ( event ) => {
-		console.log('loader status', loader);
+	
 		event.preventDefault();
 		if( !email ) {
 			setEmailEmpty(true);
@@ -56,13 +56,13 @@ const Auth = ( props ) => {
 				setLoader(false);
 				setEmail('');
 				setPassword('');	
-				console.log(response);
+				
 				history.push('/'); 
 		 }
 		 )
 		 .catch( err => {
 			 setLoader(false);
-			 console.log(err);
+			 
 			 setEmail('');
 			 setPassword('');
 			 setErrorMessage(err.message);

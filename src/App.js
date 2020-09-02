@@ -35,7 +35,7 @@ const App = () => {
 	}, [])
 	
 	
-	console.log('User is Authenticated', authUser);
+	
 
 	return (
         <Router>
@@ -44,7 +44,7 @@ const App = () => {
 					<Route path="/login" component={Login} />
 					<Route path="/signup" component={SignUp} />
 					<Route path="/checkout" component={ Checkout } />
-					<Route path="/" exact component={ Home } />
+					<Route path="/"  component={ Home } />
 				</Switch>
             </div>
         </Router>

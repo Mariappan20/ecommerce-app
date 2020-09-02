@@ -1,6 +1,7 @@
-import React,{ useState } from 'react';
+import React,{ useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
+import axios from 'axios'
 import { auth } from '../../firebase';
 
 
@@ -8,55 +9,47 @@ import './Home.css';
 
 import Navbar from '../../components/Navbar/Navbar';
 import Product from '../../components/Product/Product';
+import Loader from '../../components/Loader/Loader';
 import { useStateValue } from '../../context/StateProvider';
 
 const Home = (props) => {
 	
-	const [ products,setProducts ] = useState([
-		{ 
-			_id: 0,
-			name: "iPhone 6",
-			price: 70000,
-			src: "apple"
-		},
-		{ 
-			_id: 1,
-			name: "samsung galaxy j6",
-			price: 70000,
-			src: "samsung"
-		},
-		{ 
-			_id: 2,
-			name: "asus xen pro",
-			price: 80000,
-			src: "asus"
-		},
-		{ 
-			_id: 3,
-			name: "asus xen pro",
-			price: 80000,
-			src: "asus"
-		},
-		{ 
-			_id: 4,
-			name: "asus xen pro",
-			price: 80000,
-			src: "asus"
-		},
-		{ 
-			_id: 5,
-			name: "asus xen pro",
-			price: 80000,
-			src: "asus"
-		},
-		
-		
-	]);
-	
-	const [{ cart}, dispatch ] = useStateValue();
+	const [{ cart, products}, dispatch ] = useStateValue();
 	const [{ authUser} ] = useStateValue();
+	const [ loader, setLoader ] = useState(false);
 	
+	
+
 	const history = useHistory();
+	
+	useEffect(() => {
+		setLoader(true);
+		axios.get('https://ecommerce-app-d855d.firebaseio.com/listProducts.json')
+		 .then(response => { 
+				
+				const products = [];
+                for ( let key in response.data ) {
+                    products.push(
+                        {
+                            ...response.data[key],
+							id: key
+                           
+                        });
+                }
+				dispatch({
+					type: 'LIST_PRODUCTS',
+					products: products
+				});
+				setLoader(false);
+				
+				})
+		 .catch( err => { 
+			setLoader(false)
+			
+			});
+	},[]);
+	
+
 	
 	const addToCartHandler = (id) => {
 		
@@ -104,13 +97,13 @@ const Home = (props) => {
 						cartClicked={cartClickedHandler}	/>
 					<Container>
 						<Row className="homeContent">
-							{ 
+							{ loader ? <Loader /> :
 								products.map( products => (
 									<Col md={4} lg={3} xl={3}  className="pad__zero" >
-										<Product key={products._id} name={products.name}
+										<Product key={products.id} name={products.name}
 											price={products.price}
 											src={products.src}
-											clicked={( _id ) => addToCartHandler(products._id)}
+											clicked={( id ) => addToCartHandler(products.id)}
 										/>
 									</Col>	
 								) )

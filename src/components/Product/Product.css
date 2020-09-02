@@ -26,5 +26,12 @@
     box-shadow: -1px 2px 40px -7px rgba(201,201,201,1);
 }
 
+.marg-btm { 
+	margin-bottom: 0;
+}
+
+.marg-top {
+	margin-top: 5px;
+}
 
 	
