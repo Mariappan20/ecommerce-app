@@ -1,4 +1,8 @@
 .signup {
+	padding: 20px;
+}
+
+.signup__form {
 	border: 1px solid #ddd;
 	margin: 25px auto;
 	max-width: 400px;
