@@ -8,7 +8,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import CheckoutItem from '../../components/CheckoutItem/CheckoutItem';
 import CartPrice from '../../components/CartPrice/CartPrice';
 import { useStateValue} from '../../context/StateProvider';
-import { cartTotal} from '../../context/reducer';
+
 
 const Checkout = () => {
 	

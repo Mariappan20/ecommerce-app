@@ -32,11 +32,8 @@ const App = () => {
 		return(() => {
 			removeListen();
 		})
-	}, [])
+	},[]);
 	
-	
-	
-
 	return (
         <Router>
             <div>
