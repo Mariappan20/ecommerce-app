@@ -99,7 +99,7 @@ const Home = (props) => {
 						<Row className="homeContent">
 							{ loader ? <Loader /> :
 								products.map( products => (
-									<Col md={4} lg={3} xl={3}  className="pad__zero" >
+									<Col xs={12} sm={12} md={4} lg={3} xl={3}  className="pad__zero" >
 										<Product key={products.id} name={products.name}
 											price={products.price}
 											src={products.src}

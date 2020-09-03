@@ -30,9 +30,6 @@ const Checkout = () => {
 	
 	const placeOrderHandler = () => {
 		setShowModal(true);
-		
-		
-		
 	}
 	
 	const logoutHandler = () => {
@@ -74,7 +71,7 @@ const Checkout = () => {
 							<h4>Your Shopping Cart</h4>
 							
 							<Row>
-								<Col md={8} lg={8} xl={8}>
+								<Col xs={12} sm={12} md={8} lg={8} xl={8}>
 									{cart.map( items => ( 
 										<CheckoutItem 
 											key={items._id}
@@ -86,7 +83,7 @@ const Checkout = () => {
 									}
 									
 								</Col>
-								<Col md={4} lg={4} xl={4} >
+								<Col xs={12} sm={12} md={4} lg={4} xl={4} >
 									<CartPrice cart={cart} 
 									clicked={placeOrderHandler}
 									show={showModal}
