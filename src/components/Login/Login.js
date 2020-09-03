@@ -8,6 +8,7 @@ const Login = ( props ) => {
 	
 	return (
 		<div className="login">
+			<div className="login__form">
 			 <form>
 				 <div className="login__title">
 				     <Link className="login__link" to="/">E-Shop</Link>
@@ -35,8 +36,8 @@ const Login = ( props ) => {
 					<small>New to E-Shop ? <Link to="/signup" className="login__createLink">Create an Account</Link></small>
 				</div>
 			 </form>
-			 
-			 <div className="login__error">{props.errorMessage}</div>
+			</div> 
+			<div className="login__error">{props.errorMessage}</div>
 		</div>
 	);
 }

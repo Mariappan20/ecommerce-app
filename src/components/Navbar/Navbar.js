@@ -13,11 +13,11 @@ const Navbar = (props) => {
         <nav className="navBar">
             <Container>
                 <Row>
-                    <Col xs={3} sm={3} md={2} lg={2} xl={2}className="textCenter">
+                    <Col xs={4} sm={3} md={2} lg={2} xl={2}className="textCenter">
                         <Link to="/" className="navBar__siteName">E-Shop</Link>
                     </Col>
 
-                   <Col xs={6} sm={6} md={6} lg={6} xl={6} className="navBar__search">
+                   <Col xs={5} sm={6} md={6} lg={6} xl={6} className="navBar__search">
                         <input type="text" className="navBar__searchInput" />
 					    <div className="navBar__searchIconHolder">
 						   <Search size={18} className="navBar__searchIcon" />
@@ -30,7 +30,7 @@ const Navbar = (props) => {
 						</div>
                     </Col>
 
-                    <Col xs={4} sm={4} md={2} lg={2} xl={2} className="textCenter" >
+                    <Col xs={5} sm={4} md={2} lg={2} xl={2} className="textCenter" >
 						<div onClick={props.cartClicked}>
 							<CartFill size={17} className="navBar__cartIcon"/>
 							<span className="navBar__cart">
